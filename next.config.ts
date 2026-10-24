@@ -4,6 +4,7 @@ const nextConfig: NextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
   distDir: process.env.PORTFOLIO_NEXT_DIST_DIR || ".next",
+  output: "standalone",
   outputFileTracingRoot: process.cwd(),
   async headers() {
     return [

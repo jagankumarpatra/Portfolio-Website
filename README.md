@@ -37,6 +37,35 @@ npm run preview     # Build and serve with draft content for private review
 
 Do not deploy with `SHOW_DRAFTS=true`. Production builds publish approved content only.
 
+## Learn and run with Docker
+
+Install Docker Desktop, start it, and check that the Docker engine is running:
+
+```sh
+docker --version
+docker compose version
+```
+
+Build the production image and start the container:
+
+```sh
+docker compose up --build
+```
+
+Open [http://localhost:3000](http://localhost:3000). Stop the container with `Ctrl+C`, or
+run `docker compose down` in another terminal. Useful commands while learning:
+
+```sh
+docker compose ps
+docker compose logs -f
+docker image ls
+docker compose down
+```
+
+The `Dockerfile` uses separate dependency, build, and runtime stages. The final image runs
+Next.js standalone output as a non-root user; `.dockerignore` prevents local dependencies,
+environment files, and private source documents from entering the build context.
+
 ## Content
 
 Portfolio copy and structured data live in `content/`. Numeric claims are checked against
