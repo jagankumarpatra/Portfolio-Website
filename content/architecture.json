@@ -1,0 +1,44 @@
+{
+  "systems": [
+    {
+      "id": "ai-call-analysis",
+      "title": "AI Call Analysis Public API",
+      "caseStudySlug": "ai-call-analysis-public-api",
+      "status": "approved",
+      "evidenceTag": "L",
+      "approvedOn": "2026-10-24",
+      "nodes": [
+        { "id": "client", "label": "Client", "type": "client", "x": 0, "y": 140, "status": "approved", "evidenceTag": "L", "approvedOn": "2026-10-24", "role": "Starts analysis with an HTTPS recording link, then checks status or fetches details." },
+        { "id": "public-api", "label": "Start analysis", "type": "service", "x": 250, "y": 140, "status": "approved", "evidenceTag": "L", "approvedOn": "2026-10-24", "role": "The public API accepts the request and applies the documented duration limit." },
+        { "id": "upload-validation", "label": "Link & duration checks", "type": "service", "x": 510, "y": 140, "status": "approved", "evidenceTag": "L", "approvedOn": "2026-10-24", "role": "Accepts HTTPS recording links, reads duration, and limits calls to two hours; duration detection was fixed for MP4, AMR and OGG." },
+        { "id": "transcription", "label": "AI analysis", "type": "service", "x": 770, "y": 140, "status": "approved", "evidenceTag": "L", "approvedOn": "2026-10-24", "role": "The request is processed through the AI call-analysis workflow." },
+        { "id": "scoring-insights", "label": "Status & details API", "type": "service", "x": 1030, "y": 60, "status": "approved", "evidenceTag": "L", "approvedOn": "2026-10-24", "role": "Clients can check analysis status and retrieve result details." },
+        { "id": "webhook-delivery", "label": "Webhook result", "type": "external", "x": 1030, "y": 220, "status": "approved", "evidenceTag": "L", "approvedOn": "2026-10-24", "role": "The result is also delivered through a webhook." }
+      ],
+      "edges": [
+        ["client", "public-api"], ["public-api", "upload-validation"], ["upload-validation", "transcription"],
+        ["transcription", "scoring-insights"], ["transcription", "webhook-delivery"]
+      ]
+    },
+    {
+      "id": "lead-intelligence",
+      "title": "Lead Intelligence",
+      "caseStudySlug": "lead-intelligence",
+      "status": "draft",
+      "evidenceTag": "L",
+      "needsInput": ["confirm the simplified flow between nodes", "DynamoDB leads store, SQS, SNS and API gateway wait for the updated ledger"],
+      "nodes": [
+        { "id": "li-client", "label": "Client", "type": "client", "x": 0, "y": 130, "status": "approved", "evidenceTag": "CV", "approvedOn": "2026-10-18", "role": "Runo views of lead summary, health score and conversion or churn prediction." },
+        { "id": "permissions", "label": "Permissions", "type": "service", "x": 250, "y": 10, "status": "approved", "evidenceTag": "L", "approvedOn": "2026-10-18", "role": "A new View customer analysis permission, plus an admin configuration." },
+        { "id": "lead-service", "label": "Lead filters", "type": "service", "x": 250, "y": 170, "status": "approved", "evidenceTag": "L", "approvedOn": "2026-10-18", "role": "Lead Intelligence filters in Allocations and Call logs." },
+        { "id": "ai-scoring", "label": "AI scoring", "type": "service", "x": 500, "y": 130, "status": "approved", "evidenceTag": "L", "approvedOn": "2026-10-18", "role": "Gives a summary, a health score and the chance to convert or churn. Personal calls are never sent to AI, and admins choose which calls are analysed by CRM field values." },
+        { "id": "credit-billing", "label": "Credit billing", "type": "service", "x": 760, "y": 40, "status": "approved", "evidenceTag": "L", "approvedOn": "2026-10-18", "role": "The feature is billed through Lead Analysis AI credits." },
+        { "id": "report-service", "label": "Reports", "type": "service", "x": 760, "y": 220, "status": "approved", "evidenceTag": "L", "approvedOn": "2026-10-18", "role": "Lead columns appear in customer, allocation and call reports." }
+      ],
+      "edges": [
+        ["li-client", "lead-service"], ["permissions", "lead-service"], ["lead-service", "ai-scoring"],
+        ["ai-scoring", "credit-billing"], ["ai-scoring", "report-service"]
+      ]
+    }
+  ]
+}

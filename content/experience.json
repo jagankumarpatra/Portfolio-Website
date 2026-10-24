@@ -1,0 +1,38 @@
+{
+  "roles": [
+    {
+      "company": "Runo (CRM SaaS)",
+      "title": "Backend, Runo (CRM SaaS)",
+      "period": "Oct 2025 – Present",
+      "status": "approved",
+      "evidenceTag": "CV",
+      "approvedOn": "2026-10-18",
+      "bullets": [
+        "Delivered the standalone AI Call Analysis API across six repositories, shaping its request contract with product, frontend and AI teams and adding secure-link, duration-limit and result-delivery handling.",
+        "Designed the DynamoDB storage layout and APIs for an hourly and daily usage page; followed launch with seven usage-write fixes over four days.",
+        "Delivered Lead Intelligence across eight repositories, including filters, report columns, permissions and AI-credit billing; the feature released in v8.2.",
+        "Designed shared location-filter logic across customer pages and reports, added customer API indexes, and shared the measured latency with the tech lead; the values were not recorded in the work history."
+      ]
+    },
+    {
+      "company": "Invincix Solutions",
+      "title": "Associate Consultant, Invincix Solutions",
+      "period": "Jun 2024 – Oct 2025",
+      "status": "approved",
+      "evidenceTag": "CV",
+      "approvedOn": "2026-10-18",
+      "bullets": [
+        "Delivered features and releases for a subscription milk-delivery app serving {{users_invincix}} active users, by building and maintaining Node.js REST APIs and the Flutter client.",
+        "Integrated Razorpay, Cashfree and Easebuzz, by building webhook handling with signature verification and payment reconciliation flows.",
+        "Cut API response time by {{latency_cut}}, by optimizing queries, adding response caching and reducing parsing overhead.",
+        "Enabled verifiable deliveries, by building GPS tracking, driver validation and EXIF timestamp verification."
+      ]
+    }
+  ],
+  "education": {
+    "degree": "B.Tech, Computer Science",
+    "school": "Silicon Institute of Technology, Bhubaneswar",
+    "period": "Jul 2020 – Jul 2024",
+    "note": "CGPA {{cgpa}} / {{cgpa_scale}}"
+  }
+}

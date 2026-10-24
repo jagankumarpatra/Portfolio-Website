@@ -1,0 +1,332 @@
+{
+  "items": [
+    {
+      "id": "q01",
+      "question": "How many years of experience do you have?",
+      "keywords": [
+        "years",
+        "experience"
+      ],
+      "answer": "{{years}} years (as of 2026) of experience. I'm currently at Runo (CRM SaaS) and earlier worked at Invincix Solutions.",
+      "source": {
+        "type": "page",
+        "ref": "experience"
+      },
+      "followUps": [
+        "q02",
+        "q03"
+      ],
+      "status": "approved",
+      "evidenceTag": "CV",
+      "approvedOn": "2026-10-18"
+    },
+    {
+      "id": "q02",
+      "question": "What did you do at Runo?",
+      "keywords": [
+        "runo",
+        "work",
+        "role",
+        "shipped"
+      ],
+      "answer": "At Runo, my work spans public APIs, AI-assisted workflows, usage metering, permissions and production follow-through. The supplied work record counts 321 merged pull requests across 18 repositories from Dec 2025 to Oct 2026.",
+      "source": {
+        "type": "page",
+        "ref": "experience"
+      },
+      "followUps": [
+        "q04",
+        "q03"
+      ],
+      "status": "approved",
+      "evidenceTag": "CV",
+      "approvedOn": "2026-10-18"
+    },
+    {
+      "id": "q03",
+      "question": "What is your tech stack?",
+      "keywords": [
+        "stack",
+        "tech",
+        "technologies",
+        "skills"
+      ],
+      "answer": "Node.js and TypeScript on AWS, with DynamoDB, MongoDB, MySQL and Redis. I also work with SQS, SNS, EventBridge and BullMQ. The full list is on my CV.",
+      "source": {
+        "type": "page",
+        "ref": "cv"
+      },
+      "followUps": [
+        "q12",
+        "q02"
+      ],
+      "status": "approved",
+      "evidenceTag": "CV",
+      "approvedOn": "2026-10-18"
+    },
+    {
+      "id": "q04",
+      "question": "How many pull requests are recorded?",
+      "keywords": [
+        "prs",
+        "pull",
+        "requests"
+      ],
+      "answer": "The work record counts {{prs_merged}} merged pull requests across {{repositories}} repositories from Dec 2025 to Oct 2026. The count excludes release-promotion PRs and PRs where most commits were by others.",
+      "source": {
+        "type": "page",
+        "ref": "experience"
+      },
+      "followUps": [
+        "q02",
+        "q13"
+      ],
+      "status": "approved",
+      "evidenceTag": "L",
+      "approvedOn": "2026-10-18"
+    },
+    {
+      "id": "q05",
+      "question": "How can I contact you?",
+      "keywords": [
+        "contact",
+        "email",
+        "reach",
+        "hire"
+      ],
+      "answer": "Email me at patrajagankumar2002@gmail.com or use the contact page, which also has my LinkedIn and GitHub.",
+      "source": {
+        "type": "page",
+        "ref": "contact"
+      },
+      "followUps": [
+        "q11",
+        "q12"
+      ],
+      "status": "approved",
+      "evidenceTag": "CV",
+      "approvedOn": "2026-10-18"
+    },
+    {
+      "id": "q06",
+      "question": "Tell me about the public API metering.",
+      "keywords": [
+        "metering",
+        "usage",
+        "quota",
+        "dynamodb"
+      ],
+      "answer": "I designed a DynamoDB table for usage data and built the paginated APIs for hourly and daily views. The work covered {{repositories_usage_page}} repositories and {{prs_usage_page}} merged PRs; the page went live in April 2026. Follow-up fixes addressed half-hour offsets and hourly/daily shifts. Business impact was not recorded.",
+      "source": {
+        "type": "page",
+        "ref": "experience"
+      },
+      "followUps": [
+        "q08",
+        "q02"
+      ],
+      "status": "approved",
+      "evidenceTag": "L",
+      "approvedOn": "2026-10-24"
+    },
+    {
+      "id": "q07",
+      "question": "What did you build for RBAC?",
+      "keywords": [
+        "rbac",
+        "permissions",
+        "roles",
+        "delegate"
+      ],
+      "answer": "The documented work was a data-management permissions restructure: separating the admin-web permission from the admin permission, updating process/user changes, and fixing null handling in web allocation. It merged in March–April 2026 across nine PRs.",
+      "source": {
+        "type": "case",
+        "ref": "granular-rbac-allocation"
+      },
+      "followUps": [
+        "q08",
+        "q09"
+      ],
+      "status": "draft",
+      "evidenceTag": "L"
+    },
+    {
+      "id": "q08",
+      "question": "What is the AI Call Analysis API?",
+      "keywords": [
+        "ai",
+        "call",
+        "analysis",
+        "api"
+      ],
+      "answer": "The API starts analysis from a secure HTTPS recording link, with a two-hour duration cap. Clients can check status, fetch result details or receive a webhook. I delivered the backend across {{repositories_ai_api}} repositories in {{prs_ai_api}} merged PRs; it reached QA and production in Aug 2026. Uploads and a background worker were left out of scope, and usage figures were not recorded.",
+      "source": {
+        "type": "case",
+        "ref": "ai-call-analysis-public-api"
+      },
+      "followUps": [
+        "q02",
+        "q04"
+      ],
+      "status": "approved",
+      "evidenceTag": "L",
+      "approvedOn": "2026-10-24"
+    },
+    {
+      "id": "q09",
+      "question": "What is Lead Intelligence?",
+      "keywords": [
+        "lead",
+        "intelligence",
+        "churn",
+        "health"
+      ],
+      "answer": "Lead Intelligence stored AI-generated lead scores and summaries, connected the AI-service webhook, and added filters, permissions and report columns. I delivered the backend across {{repositories_lead_intelligence}} repositories in {{prs_lead_intelligence}} merged PRs; it released in v8.2. Dialer integration was removed from scope, and a usage-charging change was reverted.",
+      "source": {
+        "type": "case",
+        "ref": "lead-intelligence"
+      },
+      "followUps": [
+        "q08",
+        "q07"
+      ],
+      "status": "draft",
+      "evidenceTag": "L"
+    },
+    {
+      "id": "q10",
+      "question": "What is your education?",
+      "keywords": [
+        "education",
+        "degree",
+        "college",
+        "cgpa",
+        "studied"
+      ],
+      "answer": "B.Tech in Computer Science from Silicon Institute of Technology, Bhubaneswar (Jul 2020 – Jul 2024), with a CGPA of {{cgpa}} out of {{cgpa_scale}}.",
+      "source": {
+        "type": "page",
+        "ref": "about"
+      },
+      "followUps": [
+        "q01",
+        "q14"
+      ],
+      "status": "approved",
+      "evidenceTag": "CV",
+      "approvedOn": "2026-10-18"
+    },
+    {
+      "id": "q11",
+      "question": "Are you open to new roles and where?",
+      "keywords": [
+        "open",
+        "available",
+        "remote",
+        "hyderabad",
+        "looking"
+      ],
+      "answer": "Open to Backend / Platform roles · Hyderabad / Remote.",
+      "source": {
+        "type": "page",
+        "ref": "contact"
+      },
+      "followUps": [
+        "q05",
+        "q12"
+      ],
+      "status": "approved",
+      "evidenceTag": "CV",
+      "approvedOn": "2026-10-18"
+    },
+    {
+      "id": "q12",
+      "question": "Where can I see your résumé?",
+      "keywords": [
+        "resume",
+        "cv",
+        "download"
+      ],
+      "answer": "You can preview and download my résumé on the CV page. The page shows when it was last updated.",
+      "source": {
+        "type": "page",
+        "ref": "cv"
+      },
+      "followUps": [
+        "q03",
+        "q05"
+      ],
+      "status": "approved",
+      "evidenceTag": "CV",
+      "approvedOn": "2026-10-18"
+    },
+    {
+      "id": "q13",
+      "question": "What did you do at Invincix?",
+      "keywords": [
+        "invincix",
+        "payment",
+        "razorpay",
+        "cashfree",
+        "easebuzz"
+      ],
+      "answer": "I delivered features and releases for a subscription app serving {{users_invincix}} active users and integrated Razorpay, Cashfree and Easebuzz, with webhook handling, signature verification and reconciliation.",
+      "source": {
+        "type": "page",
+        "ref": "experience"
+      },
+      "followUps": [
+        "q01",
+        "q02"
+      ],
+      "status": "approved",
+      "evidenceTag": "CV",
+      "approvedOn": "2026-10-18"
+    },
+    {
+      "id": "q14",
+      "question": "How many LeetCode problems have you solved?",
+      "keywords": [
+        "leetcode",
+        "dsa",
+        "problems",
+        "java"
+      ],
+      "answer": "{{leetcode_java}} problems solved in Java on LeetCode.",
+      "source": {
+        "type": "page",
+        "ref": "about"
+      },
+      "followUps": [
+        "q10",
+        "q03"
+      ],
+      "status": "approved",
+      "evidenceTag": "CV",
+      "approvedOn": "2026-10-18"
+    },
+    {
+      "id": "q15",
+      "question": "Why did you use recording links instead of file uploads?",
+      "keywords": [
+        "recording",
+        "links",
+        "uploads",
+        "scope",
+        "worker"
+      ],
+      "answer": "The first release accepted secure HTTPS recording links. File upload and an asynchronous worker were explicitly left out of scope, keeping the initial flow to starting analysis, checking status, retrieving details or receiving a webhook.",
+      "source": {
+        "type": "case",
+        "ref": "ai-call-analysis-public-api"
+      },
+      "followUps": [
+        "q08",
+        "q04"
+      ],
+      "status": "approved",
+      "evidenceTag": "L",
+      "approvedOn": "2026-10-24"
+    }
+  ]
+}

@@ -1,0 +1,97 @@
+{
+  "items": [
+    {
+      "slug": "ai-call-analysis-public-api",
+      "title": "Standalone AI Call Analysis API",
+      "impact": "A new public API lets clients start call analysis from a secure recording link, retrieve result details and receive webhook updates.",
+      "tags": ["Public API", "Webhooks", "Reliability"],
+      "categories": ["Production", "AI Features"],
+      "role": "I shaped the request contract with product, frontend and AI teams, implemented the backend across six repositories, and carried the work through QA and production.",
+      "timeline": "Released to QA and production · August 2026 · {{prs_ai_api}} merged PRs across {{repositories_ai_api}} repositories",
+      "decisions": [
+        { "label": "Accept links, not uploads", "detail": "File upload and an asynchronous worker were explicitly left out of scope; the API starts analysis from a secure HTTPS recording URL." },
+        { "label": "Bound the work", "detail": "Only HTTPS links were accepted, and analysis was limited to recordings up to two hours. Duration parsing was corrected for MP4, AMR and OGG recordings." },
+        { "label": "Keep the result path explicit", "detail": "The contract included endpoints to start analysis, check status and fetch details, with a webhook for results." }
+      ],
+      "challenge": [
+        "The product needed a standalone way for clients outside the dialer workflow to submit call recordings for analysis.",
+        "The request and result flow had to work with secure recording links, respect duration limits, and fit existing account and credit rules."
+      ],
+      "approach": [
+        "Defined the request shape with product, frontend and AI stakeholders, then delivered the work across {{repositories_ai_api}} repositories in {{prs_ai_api}} merged pull requests.",
+        "Accepted HTTPS recording links, enforced a two-hour duration cap, and fixed duration detection for MP4, AMR and OGG.",
+        "Implemented the start, status and details endpoints alongside webhook delivery and existing credit handling.",
+        "Kept file upload and an asynchronous worker out of the initial scope."
+      ],
+      "impact_points": [
+        "Released to QA and production in August 2026.",
+        "Three production-sensitive issues were addressed in follow-up work.",
+        "Usage and adoption figures were not recorded in the supplied work history; no business-impact metric is claimed."
+      ],
+      "lessons": [
+        "Release was not the end of the work: three production-sensitive issues needed follow-up. I treat release verification and operational fixes as part of delivering a feature.",
+        "The source record has no API usage or adoption data, so I am not using call-volume or business-impact estimates for this project."
+      ],
+      "nodeId": "public-api",
+      "status": "approved",
+      "evidenceTag": "L",
+      "approvedOn": "2026-10-24"
+    },
+    {
+      "slug": "lead-intelligence",
+      "title": "Lead Intelligence",
+      "impact": "Lead Intelligence stores AI-generated lead summaries, health scores and conversion predictions so teams can prioritize follow-up.",
+      "tags": ["AI Features", "Permissions", "Reporting"],
+      "categories": ["Production", "AI Features"],
+      "role": "I delivered the backend across eight repositories and raised scope changes with the product manager, including removing dialer integration and reverting the usage-charging change.",
+      "timeline": "Released in v8.2 · {{prs_lead_intelligence}} merged PRs across {{repositories_lead_intelligence}} repositories",
+      "decisions": [
+        { "label": "Keep scope explicit", "detail": "Dialer integration was removed from the story mid-delivery. A usage-charging change was built, tested and then reverted." },
+        { "label": "Handle missing AI data", "detail": "The AI-service webhook integration included edge cases for missing data; reporting used the latest lead record per customer." }
+      ],
+      "challenge": [
+        "Sales teams wanted lead scores derived from call analysis so they could prioritize likely buyers.",
+        "The feature touched persistent lead data, AI-service webhooks, customer and allocation filters, permissions, reports and call-log columns."
+      ],
+      "approach": [
+        "Created a scoring formula for the demo, then implemented lead records and the API that returns them.",
+        "Connected the AI-service webhook, handling cases where data was missing.",
+        "Added filters, permissions, report columns and call-log columns across the agreed product surfaces."
+      ],
+      "impact_points": [
+        "Released in v8.2 after {{prs_lead_intelligence}} merged PRs across {{repositories_lead_intelligence}} repositories.",
+        "Release testing identified several issues that were traced; later follow-up work is recorded separately.",
+        "Adoption and business-impact figures are not recorded in the supplied work history."
+      ],
+      "lessons": [],
+      "nodeId": "ai-scoring",
+      "status": "draft",
+      "evidenceTag": "L",
+      "needsInput": ["lessons (your own words)", "approve challenge wording"]
+    },
+    {
+      "slug": "granular-rbac-allocation",
+      "title": "Data management permission restructuring",
+      "impact": "Data-management permissions were split and restructured across admin web and user-update flows.",
+      "tags": ["RBAC", "Permissions", "Microservices"],
+      "categories": ["Production"],
+      "role": "I executed the revised story and re-read its requirements after the user story changed.",
+      "timeline": "Merged March–April 2026 · {{prs_permissions}} merged PRs",
+      "challenge": [
+        "The data-management permission model needed to be split and restructured."
+      ],
+      "approach": [
+        "Separated the admin-web permission from the admin permission and updated process and user changes.",
+        "Addressed null handling in the web-allocation flow."
+      ],
+      "impact_points": [
+        "Merged in March–April 2026 after {{prs_permissions}} merged PRs."
+      ],
+      "lessons": [],
+      "nodeId": null,
+      "status": "draft",
+      "evidenceTag": "L",
+      "needsInput": ["lessons (your own words)", "approve challenge wording"]
+    }
+  ]
+}

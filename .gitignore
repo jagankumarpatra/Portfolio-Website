@@ -1,0 +1,15 @@
+node_modules/
+.next*/
+.vercel/
+out/
+build/
+coverage/
+*.tsbuildinfo
+/.env*
+!/.env.example
+# Local-only list of names that must never appear in content (customer names, internal repo names).
+content/denylist.txt
+
+# Private source documents and generated audit deliverables.
+/PRD_C_Final_Rulebook_v3.docx
+/portfolio-audit.pdf

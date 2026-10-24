@@ -1,0 +1,20 @@
+{
+  "name": "Jagan Kumar Patra",
+  "email": "patrajagankumar2002@gmail.com",
+  "phone": "+91 8637249203",
+  "linkedin": "https://linkedin.com/in/jagan-kumar-patra",
+  "github": "https://github.com/jagankumarpatra",
+  "statusPill": "Open to Backend / Platform roles · Hyderabad / Remote",
+  "headline": "Backend systems, built for the path from idea to production.",
+  "impactLine": "{{prs_merged}} merged PRs · {{repositories}} backend repositories · {{prs_ai_api}} PRs on the featured API",
+  "homeTitle": "Jagan Kumar Patra — Backend Engineer | Node.js · TypeScript · AWS",
+  "metaDescription": "Backend engineer in Hyderabad building Node.js and TypeScript services. 321 merged PRs across 18 repositories, including a production AI call-analysis API.",
+  "mailtoSubject": "Backend Engineer opportunity – Jagan Kumar Patra",
+  "mailtoBody": "Hi,\n\nI came across your team and wanted to reach out. I'm a backend engineer with {{years}} years of experience building Node.js and TypeScript services on AWS.\n\nAt Runo, I contributed to {{prs_merged}} merged pull requests across {{repositories}} backend repositories. A recent case study covers the standalone AI Call Analysis API, from shaping its request contract through QA and production.\n\nI'd welcome a conversation about Backend / Platform roles.\n\nRésumé: [site]/cv\nPortfolio: [site]\n\nBest regards,\nJagan Kumar Patra\n+91 8637249203",
+  "footerLine": "Jagan Kumar Patra · Backend Engineer",
+  "footerCopy": "© 2026 Jagan Kumar Patra · Built with Next.js",
+  "resumeUpdated": "2026-10-18",
+  "notFoundTitle": "This page doesn't exist. The systems I build usually do.",
+  "aiFallback": "I couldn't find a documented answer for that. This portfolio Q&A only uses facts published on this site; try a suggested question or open the relevant case study.",
+  "aiWelcome": "Portfolio Q&A · Answers are matched from published work and profile notes. It does not generate or guess facts."
+}

@@ -1,0 +1,20 @@
+{
+  "prs_merged": "321",
+  "repositories": "18",
+  "prs_ai_api": "28",
+  "repositories_ai_api": "6",
+  "prs_lead_intelligence": "36",
+  "repositories_lead_intelligence": "8",
+  "prs_usage_page": "21",
+  "repositories_usage_page": "4",
+  "prs_permissions": "9",
+  "releases": "5 (v7.2 to v9.0)",
+  "release_list": "v7.2, v8.0, v8.1, v8.2, v9.0",
+  "users_invincix": "14K+",
+  "latency_cut": "~25%",
+  "years": "2+",
+  "cgpa": "9.35",
+  "leetcode_java": "609",
+  "call_duration_limits": "1 s to 2 h",
+  "cgpa_scale": "10"
+}
